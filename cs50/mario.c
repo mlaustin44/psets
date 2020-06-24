@@ -14,14 +14,13 @@ void printArr(char* arr, int dir, int size) {
 	}
 }
 
-
-
 int main(void) {
-	//print the prompt and get the user input
-	int n;
-	printf("Height: ");
-	scanf("%d", &n);
-	printf("\n");
+	int n = 0;
+	while (n < 1 || n > 8) {
+		//print the prompt and get the user input
+		printf("Height: ");
+		scanf("%d", &n);
+	}
 
 	//allocate the array to store the pyramid
 	char* arr;
