@@ -1,8 +1,0 @@
-#include <stdio.h>
-
-int main(void) {
-	int ccn[16];
-	printf("Number: ");
-	scanf("%s", ccn);
-	printf("%s", ccn);
-}
