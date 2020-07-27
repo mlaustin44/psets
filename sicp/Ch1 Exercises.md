@@ -240,6 +240,27 @@ Iterative process:
       (f-iter (+ n1 (* 2 n2) (* 3 n3)) n1 n2 (+ count 1) n)))
 ```
 
+### Exercise 1.12
+
+Choosing to write a function which calculates the value at a given row, col index
+
+```scheme
+(define (pasc-elem row col)
+  (if (or (= col 1) (= row col)))
+  1
+  (+ 
+   (pasc-elem (- row 1) (- col 1))
+   (pasc-elem (- row 1) col)))
+
+(define (pasc-elem row col)
+  (cond ((= row 1) 1)
+   		((= col 1) 1)
+        ((= row col) 1)
+        (else (+
+               (pasc-elem (- row 1) (- col 1))
+               (pasc-elem (- row 1) col)))))
+```
+
 
 
 
