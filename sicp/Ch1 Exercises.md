@@ -265,3 +265,34 @@ Choosing to write a function which calculates the value at a given row, col inde
 
 
 
+### Exercise 1.17
+
+```scheme
+(define (t a b)
+  (cond ((= b 0) 0)
+        ((= b 2) (double a))
+        ((else (
+                (if (even? b) 
+                    (double (* a (halve b)))
+                    (a + (double (* a (halve (- b 1))))))))))
+```
+
+### Exercise 1.18
+
+Even b:
+
+a * b = a * (2 * (b/2)) = 2a * (b/2)
+
+Odd b:
+
+a * b + c = a * (1 + (b - 1)) + c = a * (b - 1) + (c * a)
+
+```scheme
+(define (* a b))
+
+(define (t-iter a b c)
+  (cond ((= b 0) c)
+        ((even? b) (t-iter (double a) (halve b) c))
+        (else (t-iter a (- b 1) (+ c a)))))
+```
+
